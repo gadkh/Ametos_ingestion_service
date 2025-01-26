@@ -1,6 +1,7 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, validator
 from datetime import datetime
 from typing import Optional
+import base64
 
 
 class EventCreate(BaseModel):
@@ -11,6 +12,9 @@ class EventCreate(BaseModel):
     user_id: Optional[str] = None
     speed_kmh: Optional[int] = None
     location: Optional[str] = None
+    zone: Optional[str] = None
+    confidence: Optional[float] = None
+    photo_base64: Optional[str] = None
 
 
 class EventResponse(BaseModel):
@@ -21,5 +25,4 @@ class EventResponse(BaseModel):
     device_type: str
 
     class Config:
-        # orm_mode = True
         from_attributes = True

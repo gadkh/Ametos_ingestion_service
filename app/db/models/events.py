@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, TIMESTAMP
+from sqlalchemy import Column, String, Integer, TIMESTAMP, Float
 from ..session_handler import Base
 
 
@@ -14,3 +14,6 @@ class Event(Base):
     location = Column(String, nullable=True)
     created_at = Column(TIMESTAMP, server_default="now()")
     device_type = Column(String, nullable=False)
+    zone = Column(String, nullable=True)
+    confidence = Column(Float, nullable=True )
+    photo_base64 = Column(String, nullable=True)

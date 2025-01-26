@@ -1,0 +1,5 @@
+[
+    {"device_id": "AA:BB:CC:DD:EE:FF", "device_type": "radar"},
+    {"device_id": "11:22:33:44:55:66", "device_type": "security_camera"},
+    {"device_id": "77:88:99:AA:BB:CC", "device_type": "access_controller"}
+]

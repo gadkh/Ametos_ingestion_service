@@ -13,3 +13,4 @@ class Event(Base):
     speed_kmh = Column(Integer, nullable=True)
     location = Column(String, nullable=True)
     created_at = Column(TIMESTAMP, server_default="now()")
+    device_type = Column(String, nullable=False)

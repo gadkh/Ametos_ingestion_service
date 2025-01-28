@@ -2,9 +2,12 @@ import redis
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+running_in_docker = os.getenv("RUNNING_IN_DOCKER")
+if not running_in_docker:
+    load_dotenv()
 
-REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
+REDIS_HOST = os.getenv("REDIS_HOST", "ingestion_redis")
+# REDIS_HOST = "ingestion_redis"
 REDIS_PORT = os.getenv("REDIS_PORT", 6379)
 REDIS_DB = os.getenv("REDIS_DB", 0)
 
